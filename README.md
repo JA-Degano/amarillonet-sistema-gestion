@@ -16,8 +16,7 @@ El sistema permite administrar clientes, servicios, reclamos técnicos y asignac
 
 - `/database`: Script de base de datos
 - `/src`: Código fuente en Java
-- `/docs`: Documentación del proyecto
-
+  
 ## Base de datos
 
 El archivo `AmarilloNet-BaseDatos-Inicial.sql` contiene la estructura inicial de la base de datos.
