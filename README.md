@@ -32,4 +32,4 @@ El archivo `Conexion.java` contiene un ejemplo básico de conexión utilizando J
 
 ## Autor
 
-DEGANO JOAQUIN
+Degano Joaquin Amilcar, estudiante de la carrera de licenciatura en informatica, Universidad Siglo XXI, año 2026
