@@ -7,13 +7,14 @@ CREATE TABLE Cliente (
     apellido VARCHAR(50),
     dni VARCHAR(20) UNIQUE,
     telefono VARCHAR(20),
-    direccion VARCHAR(100)
+    direccion VARCHAR(100),
+    email VARCHAR(100)
 );
 
 CREATE TABLE Servicio (
     id_servicio INT AUTO_INCREMENT PRIMARY KEY,
-    tipo VARCHAR(50),
-    velocidad VARCHAR(20),
+    nombre_plan VARCHAR(50),
+    velocidad INT,
     precio DECIMAL(10,2)
 );
 
@@ -39,6 +40,7 @@ CREATE TABLE Reclamo (
 CREATE TABLE Tecnico (
     id_tecnico INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50),
+    telefono VARCHAR(20),
     especialidad VARCHAR(50)
 );
 
