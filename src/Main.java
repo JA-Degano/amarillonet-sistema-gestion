@@ -7,12 +7,11 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        SistemaGestion sistema =
-                new SistemaGestion();
+        SistemaGestion sistema = new SistemaGestion();
 
         int opcion = 0;
 
-        while(opcion != 7) {
+        while (opcion != 7) {
 
             System.out.println("\n======================");
             System.out.println(" AMARILLONET");
@@ -31,76 +30,94 @@ public class Main {
                 opcion = sc.nextInt();
                 sc.nextLine();
 
-                switch(opcion) {
+                switch (opcion) {
 
                     case 1 -> {
+
                         System.out.print("ID: ");
                         int id = sc.nextInt();
                         sc.nextLine();
-                        
+
                         System.out.print("Nombre: ");
                         String nombre = sc.nextLine();
-                        
+
                         System.out.print("Teléfono: ");
                         String telefono = sc.nextLine();
-                        
+
                         System.out.print("DNI: ");
                         String dni = sc.nextLine();
-                        
+
                         System.out.print("Dirección: ");
                         String direccion = sc.nextLine();
-                        
+
                         System.out.print("Email: ");
                         String email = sc.nextLine();
-                        
-                        Cliente cliente =
-                                new Cliente(
-                                        id,
-                                        nombre,
-                                        telefono,
-                                        dni,
-                                        direccion,
-                                        email
-                                );              }
+
+                        Cliente cliente = new Cliente(
+                                id,
+                                nombre,
+                                telefono,
+                                dni,
+                                direccion,
+                                email
+                        );
+
+                        sistema.agregarCliente(cliente);
+
+                        System.out.println("Cliente registrado.");
+                    }
 
                     case 2 -> sistema.mostrarClientes();
 
                     case 3 -> {
+
+                        System.out.print("ID del cliente: ");
+                        int idCliente = sc.nextInt();
+                        sc.nextLine();
+
+                        Cliente cliente = sistema.buscarCliente(idCliente);
+
+                        if (cliente == null) {
+
+                            System.out.println("Cliente no encontrado.");
+                            break;
+                        }
+
                         System.out.print("ID Reclamo: ");
-int idReclamo = sc.nextInt();
-sc.nextLine();
+                        int idReclamo = sc.nextInt();
+                        sc.nextLine();
 
-System.out.print("Descripción: ");
-String descripcion = sc.nextLine();
+                        System.out.print("Descripción: ");
+                        String descripcion = sc.nextLine();
 
-System.out.print("Prioridad (Alta/Media/Baja): ");
-String prioridad = sc.nextLine();
+                        System.out.print("Prioridad (Alta/Media/Baja): ");
+                        String prioridad = sc.nextLine();
 
-Reclamo reclamo =
-    new Reclamo(
-        idReclamo,
-        descripcion,
-        "Pendiente",
-        prioridad,
-        c
-    );
+                        Reclamo reclamo = new Reclamo(
+                                idReclamo,
+                                descripcion,
+                                "Pendiente",
+                                prioridad,
+                                cliente
+                        );
+
+                        sistema.agregarReclamo(reclamo);
+
+                        System.out.println("Reclamo registrado.");
+                    }
 
                     case 4 -> sistema.mostrarReclamos();
 
                     case 5 -> {
-                        System.out.print(
-                                "Ingrese ID: "
-                        );
 
-                        int buscar =
-                                sc.nextInt();
-                        
+                        System.out.print("Ingrese ID: ");
+
+                        int buscar = sc.nextInt();
+
                         Cliente encontrado =
-                                sistema.buscarCliente(
-                                        buscar
-                                );
-                        
-                        if(encontrado != null) {
+                                sistema.buscarCliente(buscar);
+
+                        if (encontrado != null) {
 
                             encontrado.mostrarDatos();
 
@@ -116,17 +133,17 @@ Reclamo reclamo =
 
                     case 7 -> System.out.println(
                             "Fin del programa."
-                        );
+                    );
 
                     default -> System.out.println(
                             "Opción inválida."
-                        );
+                    );
                 }
 
-            } catch(InputMismatchException e) {
+            } catch (InputMismatchException e) {
 
                 System.out.println(
-                    "Debe ingresar un número."
+                        "Debe ingresar un número."
                 );
 
                 sc.nextLine();
