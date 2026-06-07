@@ -16,6 +16,7 @@ El sistema permite administrar clientes, servicios, reclamos técnicos y asignac
 
 - `/database`: Script de base de datos
 - `/src`: Código fuente en Java
+- `/Diagramas`: Contiene los diagramas creados en el transcurso de los trabajos
   
 ## Base de datos
 
