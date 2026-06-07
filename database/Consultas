@@ -1,0 +1,25 @@
+-- INSERTS
+
+INSERT INTO Cliente
+(nombre, apellido, dni, telefono, direccion)
+VALUES
+('Juan', 'Perez', '12345678',
+'3704123456',
+'Av. 25 de Mayo 123');
+
+-- CONSULTAS
+
+SELECT * FROM Cliente;
+
+SELECT * FROM Reclamo;
+
+-- UPDATE
+
+UPDATE Reclamo
+SET estado='Resuelto'
+WHERE id_reclamo=1;
+
+-- DELETE
+
+DELETE FROM Reclamo
+WHERE id_reclamo=1;
